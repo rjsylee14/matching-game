@@ -21,7 +21,7 @@
         		<li><i class="fa fa-star"></i></li>
         	</ul>
 
-            Number of moves: <span class="moves"> 0 </span>
+            Number of moves: <span class="moves"></span>
             
             <div class="timer">
                 <time></time>
@@ -31,6 +31,8 @@
         		<i class="fa fa-repeat"></i>
         	</div>
         </section>
+
+
         
         <ul class="deck">
             <li class="card" data-name="brian">
@@ -98,6 +100,16 @@
                 <img class="backSide" src="img/fairy.jpg" alt="fairy">
             </li>
         </ul>
+
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">×</span>
+                <h1>Congratulations!</h1>
+                You made <span id="totalMoves"></span> moves
+                in <span id="totalTime"></span> 
+                <!--with a <span id="starRating"></span> star rating! -->
+            </div>
+        </div>
         
     </div>
     <script src="js/app.js"></script>

@@ -37,15 +37,14 @@ function moveCounter() {
         startTimer();
     }
     //star rating based on moves
-    
-    if (moves > 4 && moves < 7) {
+    if (moves > 16 && moves < 32) {
         for (i= 0; i < 3; i++) {
             if (i > 1){
                 arrayOfStars[i].style.visibility = "collapse";
             }
         }
     }
-    else if (moves > 7) {
+    else if (moves > 32) {
         for (i= 0; i < 3; i++) {
             if (i > 0) {
                 arrayOfStars[i].style.visibility = "collapse";
@@ -66,7 +65,7 @@ function shuffle(array) {
     return array;
 };
 
-//function for starting the game and resetting the timer
+//function for starting the game, which shuffles the deck and resets the move counter, star rating and timer
 function startGame() {
     let shuffledCards = shuffle(arrayOfCards);
     for (let i= 0; i < shuffledCards.length; i++){
@@ -126,10 +125,14 @@ const displayFrontSide = function() {
 };
 
 //function to check if the two flipped cards are a match
+
+let matchedCards = [];
 const checkForMatch = function() {
     if (firstChosenCard.dataset.name === secondChosenCard.dataset.name) {
+        matchedCards.push(firstChosenCard.dataset.name);
+        matchedCards.push(secondChosenCard.dataset.name);
         cardsMatch();
-        //console.log('did this work?');
+        //console.log("There are " + matchedCards + " cards in matchedCards.");
     } else {
         cardsDontMatch();
         //console.log('did this work part 2?');
@@ -145,6 +148,9 @@ arrayOfCards.forEach(function(card) { // FOR EACH CARD IN ARRAYOFCARDS, DISPLAYF
 function cardsMatch() {
     firstChosenCard.removeEventListener('click', displayFrontSide);
     secondChosenCard.removeEventListener('click', displayFrontSide);
+    if (matchedCards.length === 16) {
+        endGame();
+    }
     //console.log("click eventlistener removed!");
 }; 
 
@@ -160,3 +166,29 @@ function cardsDontMatch() {
         //arrayOfOpenedCards = [];
     }, 1200);
 };
+
+let modal = document.querySelector(".modal");
+let closeButton = document.querySelector(".close-button");
+let totalMoves = document.querySelector('#totalMoves');
+let totalTime = document.querySelector('#totalTime');
+//let starRating = document.querySelector(".stars").innerHTML;
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+const endGame = function () {
+    clearInterval(interval);
+    totalTime = timer.innerHTML;
+    totalMoves = counter.innerHTML;
+    //starRating = arrayOfStars.innerHTML;
+    toggleModal();
+    document.querySelector('#totalMoves').innerHTML = totalMoves;
+    //document.querySelector('#starRating').innerHTML = starRating;
+    document.querySelector('#totalTime').innerHTML = totalTime;
+}
+
+closeButton.addEventListener("click", function(e) {
+    toggleModal();
+    startGame();
+});
