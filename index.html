@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Susan's Matching Game</title>
+    <meta name="description" content="">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Susan's Matching Game</h1>
+        </header>
+
+        <section class="score-panel">
+        	<ul class="stars">
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        	</ul>
+
+            Number of moves: <span class="moves"> 0 </span>
+            
+            <div class="timer">
+                <time></time>
+            </div>
+
+            <div class="restart" onclick = "startGame()">
+        		<i class="fa fa-repeat"></i>
+        	</div>
+        </section>
+        
+        <ul class="deck">
+            <li class="card" data-name="brian">
+                <img class="frontSide" src="img/brian.jpg" alt="brian">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="brian">
+                <img class="frontSide" src="img/brian.jpg" alt="brian">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="cristian">
+                <img class="frontSide" src="img/cristian.jpg" alt="cristian">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="cristian">
+                <img class="frontSide" src="img/cristian.jpg" alt="cristian">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="freddy">
+                <img class="frontSide" src="img/freddy.jpg" alt="freddy">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="freddy">
+                <img class="frontSide" src="img/freddy.jpg" alt="freddy">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="tay">
+                <img class="frontSide" src="img/tay.jpg" alt="tay">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="tay">
+                <img class="frontSide" src="img/tay.jpg" alt="tay">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="hadar">
+                <img class="frontSide" src="img/hadar.jpg" alt="hadar">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="hadar">
+                <img class="frontSide" src="img/hadar.jpg" alt="hadar">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="denton">
+                <img class="frontSide" src="img/denton.jpg" alt="denton">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="denton">
+                <img class="frontSide" src="img/denton.jpg" alt="denton">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="enzo">
+                <img class="frontSide" src="img/enzo.jpg" alt="enzo">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="enzo">
+                <img class="frontSide" src="img/enzo.jpg" alt="enzo">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="sonja">
+                <img class="frontSide" src="img/sonja.jpg" alt="sonja">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+            <li class="card" data-name="sonja">
+                <img class="frontSide" src="img/sonja.jpg" alt="sonja">
+                <img class="backSide" src="img/fairy.jpg" alt="fairy">
+            </li>
+        </ul>
+        
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
